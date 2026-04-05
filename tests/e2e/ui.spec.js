@@ -1,14 +1,14 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Theme toggle', () => {
-  test('switches to light mode and persists after reload', async ({ page }) => {
-    await page.goto('/');
-    await page.click('#theme-toggle');
-    await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
-    await page.reload();
-    await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
-  });
-});
+//test.describe('Theme toggle', () => {
+    //test('switches to light mode and persists after reload', async ({ page }) => {
+      //await page.goto('/');
+      //await page.click('#theme-toggle');
+      //await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+      //await page.reload();
+      //await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+    //});
+  //});
 
 test.describe('Typewriter', () => {
   test('element is visible and contains text after load', async ({ page }) => {

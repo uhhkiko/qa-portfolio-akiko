@@ -1,0 +1,46 @@
+/* Hide default cursor site-wide */
+*, *::before, *::after {
+    cursor: none !important;
+  }
+  
+  /* Outer ring */
+  .cursor-ring {
+    position: fixed;
+    top: 0; left: 0;
+    width: 32px; height: 32px;
+    border: 1.5px solid var(--color-accent);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: width var(--transition-fast),
+                height var(--transition-fast),
+                border-color var(--transition-fast),
+                opacity var(--transition-fast);
+    z-index: 9999;
+  }
+  
+  /* Inner dot */
+  .cursor-dot {
+    position: fixed;
+    top: 0; left: 0;
+    width: 6px; height: 6px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: transform var(--transition-fast),
+                background var(--transition-fast);
+  }
+  
+  /* Hover state — ring expands, dot disappears */
+  .cursor-ring.hovering {
+    width: 48px;
+    height: 48px;
+    border-color: var(--color-accent-hover);
+    background: rgba(56, 139, 253, 0.08);
+  }
+  
+  .cursor-dot.hovering {
+    transform: translate(-50%, -50%) scale(0);
+  }

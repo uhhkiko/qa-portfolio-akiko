@@ -57,5 +57,5 @@ jobs:
           REMOTE_HOST: ${{ secrets.SSH_HOST }}
           REMOTE_USER: ${{ secrets.SSH_USERNAME }}
           REMOTE_PORT: ${{ secrets.SSH_PORT }}
-          TARGET: /home/${{ secrets.SSH_USERNAME }}/public_html
+          TARGET: /home/${{ secrets.SSH_USERNAME }}/domains/qa-akiko.com/public_html
           EXCLUDE: "/node_modules/"

@@ -26,6 +26,10 @@
         </nav>
       </header>
 <main>
+    <span class="badge status-resolved">Resolved</span>
+    <span class="badge status-progress">In Progress</span>
+    <span class="badge status-open">Open</span>
+    
     <section id="hero">
         <div class="ticket-header">
           <span class="ticket-id">QA-001</span>
@@ -60,6 +64,9 @@
 
     <section id="projects">
         <h2>Projects</h2>
+        <span class="badge status-critical easter-egg-trigger" id="easterEggTrigger">
+            CRIT-001 · Unresolved
+          </span>
     </section>
 
     <section id="contact">
@@ -78,10 +85,7 @@
 
 <footer>
     <p>Built & tested by Akiko</p>
-    <span class="badge status-critical easter-egg-trigger" id="easterEggTrigger">
-      CRIT-001 · Unresolved
-    </span>
-  </footer>
+</footer>
 
 <script src="js/main.js" type="module"></script>
 
@@ -104,10 +108,6 @@
       <button id="gameClose" class="btn btn-secondary">Close ticket</button>
     </div>
   </div>
-
-<span class="badge status-resolved">Resolved</span>
-<span class="badge status-progress">In Progress</span>
-<span class="badge status-open">Open</span>
 
 </body>
 </html>

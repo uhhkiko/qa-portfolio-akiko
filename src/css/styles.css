@@ -1,8 +1,3 @@
-@import './cursor.css';
-@import './components.css';
-@import './hero.css';
-@import './game.css';
-
 /* CSS custom properties — theme foundation */
 :root {
   /* Core palette */
@@ -94,7 +89,6 @@ nav {
   font-size: 14px;
   color: var(--color-accent);
   font-weight: 500;
-  margin-right: auto;
 }
 
 .logo::before {
@@ -106,6 +100,7 @@ nav ul {
   display: flex;
   list-style: none;
   gap: var(--space-xs);
+  margin-left: auto;
 }
 
 nav a {

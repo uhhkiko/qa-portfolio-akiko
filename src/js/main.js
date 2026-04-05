@@ -52,23 +52,28 @@ function updateToggleLabel(theme) {
 
 // Cursor
 
+const bug = document.getElementById('cursorBug');
+const criticalEls = '[data-cursor="critical"], #easterEggTrigger';
+
 document.addEventListener('mousemove', e => {
-  ring.style.left = e.clientX + 'px';
-  ring.style.top  = e.clientY + 'px';
-  dot.style.left  = e.clientX + 'px';
-  dot.style.top   = e.clientY + 'px';
+  bug.style.left = e.clientX + 'px';
+  bug.style.top  = e.clientY + 'px';
 });
 
 document.addEventListener('mouseover', e => {
-  if (e.target.closest(interactables)) {
-    ring.classList.add('hovering');
-    dot.classList.add('hovering');
+  if (e.target.closest('a, button, input, textarea, [role="button"]')) {
+    bug.classList.add('hovering');
+  }
+  if (e.target.closest(criticalEls)) {
+    bug.src = 'assets/cursor-bug-critical.svg';
   }
 });
 
 document.addEventListener('mouseout', e => {
-  if (e.target.closest(interactables)) {
-    ring.classList.remove('hovering');
-    dot.classList.remove('hovering');
+  if (e.target.closest('a, button, input, textarea, [role="button"]')) {
+    bug.classList.remove('hovering');
+  }
+  if (e.target.closest(criticalEls)) {
+    bug.src = 'assets/cursor-bug.svg';
   }
 });

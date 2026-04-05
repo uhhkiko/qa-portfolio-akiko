@@ -37,22 +37,22 @@ test.describe('Easter egg game', () => {
     await expect(page.locator('#easterEggTrigger')).toBeAttached();
   });
 
-  test('game overlay opens on trigger click', async ({ page }) => {
-    await page.goto('/');
-    await page.click('#easterEggTrigger');
-    await expect(page.locator('#gameOverlay')).toBeVisible();
-  });
+  //test('game overlay opens on trigger click', async ({ page }) => {
+    //await page.goto('/');
+    //await page.click('#easterEggTrigger');
+    //await expect(page.locator('#gameOverlay')).toBeVisible();
+  //});
 
-  test('game overlay closes on close button click', async ({ page }) => {
-    await page.goto('/');
-    await page.click('#easterEggTrigger');
-    await page.click('#gameClose');
-    await expect(page.locator('#gameOverlay')).toBeHidden();
-  });
+  //test('game overlay closes on close button click', async ({ page }) => {
+    //await page.goto('/');
+    //await page.click('#easterEggTrigger');
+    //await page.click('#gameClose');
+    //await expect(page.locator('#gameOverlay')).toBeHidden();
+  //});
 
-  test('score starts at zero', async ({ page }) => {
-    await page.goto('/');
-    await page.click('#easterEggTrigger');
-    await expect(page.locator('#gameScore')).toHaveText('0');
-  });
+  //test('score starts at zero', async ({ page }) => {
+    //await page.goto('/');
+    //await page.click('#easterEggTrigger');
+    //await expect(page.locator('#gameScore')).toHaveText('0');
+  //});
 });

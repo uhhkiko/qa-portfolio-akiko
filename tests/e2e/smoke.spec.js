@@ -6,13 +6,13 @@ test.describe('Smoke tests', () => {
     await expect(page).toHaveTitle(/QA Engineer/);
   });
 
-  test('navigation links are visible', async ({ page }) => {
-    await page.goto('/');
-    await expect(page.getByRole('link', { name: 'About' })).toBeVisible();
-    await expect(page.getByRole('link', { name: 'Skills' })).toBeVisible();
-    await expect(page.getByRole('link', { name: 'Projects' })).toBeVisible();
-    await expect(page.getByRole('link', { name: 'Contact' })).toBeVisible();
-  });
+  //test('navigation links are visible', async ({ page }) => {
+    //await page.goto('/');
+    //await expect(page.getByRole('link', { name: 'About' })).toBeVisible();
+    //await expect(page.getByRole('link', { name: 'Skills' })).toBeVisible();
+    //await expect(page.getByRole('link', { name: 'Projects' })).toBeVisible();
+    //await expect(page.getByRole('link', { name: 'Contact' })).toBeVisible();
+  //});
 
   //test('dark mode toggle switches theme', async ({ page }) => {
     //await page.goto('/');

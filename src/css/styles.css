@@ -1,33 +1,38 @@
+@import './cursor.css';
+@import './components.css';
+@import './hero.css';
+@import './game.css';
+
 /* CSS custom properties — theme foundation */
 :root {
   /* Core palette */
-  --color-bg-primary:    #0d1117;   /* page background */
-  --color-bg-secondary:  #161b22;   /* cards, panels */
-  --color-bg-tertiary:   #1c2128;   /* inputs, hover states */
-  --color-border:        #30363d;   /* subtle borders */
-  --color-border-accent: #388bfd;   /* focused/active borders */
+  --color-bg-primary:    #0d1117;
+  --color-bg-secondary:  #161b22;
+  --color-bg-tertiary:   #1c2128;
+  --color-border:        #30363d;
+  --color-border-accent: #388bfd;
 
   /* Text */
-  --color-text-primary:  #e6edf3;   /* headings, body */
-  --color-text-secondary:#8b949e;   /* labels, meta */
-  --color-text-muted:    #484f58;   /* placeholders, disabled */
+  --color-text-primary:  #e6edf3;
+  --color-text-secondary:#8b949e;
+  --color-text-muted:    #484f58;
 
-  /* Accent / brand */
-  --color-accent:        #388bfd;   /* blue — links, focus rings */
+  /* Accent */
+  --color-accent:        #388bfd;
   --color-accent-hover:  #58a6ff;
 
-  /* Status badge colors (bug tracker language) */
-  --color-status-open:      #da3633;  /* red */
-  --color-status-progress:  #e3b341;  /* amber */
-  --color-status-resolved:  #3fb950;  /* green */
-  --color-status-closed:    #8b949e;  /* gray */
-  --color-status-critical:  #f78166;  /* coral — for the easter egg */
+  /* Status badge colors */
+  --color-status-open:      #da3633;
+  --color-status-progress:  #e3b341;
+  --color-status-resolved:  #3fb950;
+  --color-status-closed:    #8b949e;
+  --color-status-critical:  #f78166;
 
   /* Typography */
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-mono: 'Fira Code', 'JetBrains Mono', monospace;
 
-  /* Spacing scale */
+  /* Spacing */
   --space-xs:  4px;
   --space-sm:  8px;
   --space-md:  16px;
@@ -58,23 +63,18 @@
   --color-accent-hover:  #0550ae;
 }
 
-/* Toggle */
-#theme-toggle {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--color-text-secondary);
-  background: transparent;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-xs) var(--space-sm);
-  cursor: none;
-  transition: border-color var(--transition-fast),
-              color var(--transition-fast);
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-#theme-toggle:hover {
-  border-color: var(--color-accent);
+body {
+  background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 nav {
@@ -97,7 +97,6 @@ nav {
   margin-right: auto;
 }
 
-/* Style the project key like a JIRA project badge */
 .logo::before {
   content: '[QA] ';
   color: var(--color-text-muted);
@@ -121,4 +120,15 @@ nav a {
 nav a:hover {
   background: var(--color-bg-tertiary);
   color: var(--color-text-primary);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

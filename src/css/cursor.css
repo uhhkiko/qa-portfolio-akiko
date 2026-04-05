@@ -1,9 +1,7 @@
-/* Hide default cursor site-wide */
 *, *::before, *::after {
     cursor: none !important;
   }
   
-  /* Outer ring */
   .cursor-ring {
     position: fixed;
     top: 0; left: 0;
@@ -19,7 +17,6 @@
     z-index: 9999;
   }
   
-  /* Inner dot */
   .cursor-dot {
     position: fixed;
     top: 0; left: 0;
@@ -33,7 +30,6 @@
                 background var(--transition-fast);
   }
   
-  /* Hover state — ring expands, dot disappears */
   .cursor-ring.hovering {
     width: 48px;
     height: 48px;

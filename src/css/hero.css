@@ -1,4 +1,4 @@
-#hero {
+.ticket-section {
     max-width: 760px;
     margin: var(--space-xl) auto;
     padding: var(--space-xl);

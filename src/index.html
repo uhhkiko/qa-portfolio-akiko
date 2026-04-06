@@ -33,6 +33,8 @@
         </nav>
       </header>
 <main>
+
+<!--about section-->
     
     <section id="about" class="ticket-section">
         <div class="ticket-header">
@@ -62,47 +64,443 @@
         </div>
     </section>
 
-    <section id="skills" class="ticket-section">
-        <div class="ticket-header">
-          <span class="ticket-id">QA-002</span>
-          <span class="badge status-resolved">Resolved</span>
+<!--stats section--> 
+
+    <section id="stats" class="stats-bar reveal">
+        <div class="stat-item">
+          <span class="stat-number" data-target="500">0</span>
+          <span class="stat-suffix">+</span>
+          <span class="stat-label">Bugs Filed</span>
         </div>
-        <h2>Skills</h2>
-        <!-- content -->
+        <div class="stat-item">
+          <span class="stat-number" data-target="1200">0</span>
+          <span class="stat-suffix">+</span>
+          <span class="stat-label">Test Cases Written</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="80">0</span>
+          <span class="stat-suffix">+</span>
+          <span class="stat-label">Automation Scripts</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="40">0</span>
+          <span class="stat-suffix">+</span>
+          <span class="stat-label">Sprints Survived</span>
+        </div>
     </section>
 
-    <section id="projects" class="ticket-section">
-        <div class="ticket-header">
-            <span class="ticket-id">QA-003</span>
-            <span class="badge status-progress">In Progress</span>
+<!--skills section--> 
+
+    <section id="skills" class="section-container reveal">
+        <div class="section-header">
+          <h2 class="section-title">Skills</h2>
+          <span class="ticket-id">SPRINT-02</span>
         </div>
-        <h2>Projects</h2>
+      
+        <div class="skills-board">
+      
+          <div class="skills-lane">
+            <h3 class="lane-title">Test Automation</h3>
+            <div class="lane-cards">
+      
+              <div class="ticket-card skill-card">
+                <div class="ticket-card-header">
+                  <span class="ticket-id">SKILL-001</span>
+                  <span class="badge status-resolved">Resolved</span>
+                </div>
+                <h4 class="skill-name">Playwright</h4>
+                <p class="skill-detail">E2E, cross-browser, visual regression, GitHub Actions integration</p>
+              </div>
+      
+              <div class="ticket-card skill-card">
+                <div class="ticket-card-header">
+                  <span class="ticket-id">SKILL-002</span>
+                  <span class="badge status-resolved">Resolved</span>
+                </div>
+                <h4 class="skill-name">Selenium WebDriver</h4>
+                <p class="skill-detail">Page Object Model, Java/Python, grid execution</p>
+              </div>
+      
+              <!-- Add more skill cards following the same pattern -->
+            </div>
+          </div>
+      
+          <div class="skills-lane">
+            <h3 class="lane-title">API & Backend</h3>
+            <div class="lane-cards">
+      
+              <div class="ticket-card skill-card">
+                <div class="ticket-card-header">
+                  <span class="ticket-id">SKILL-004</span>
+                  <span class="badge status-resolved">Resolved</span>
+                </div>
+                <h4 class="skill-name">Postman</h4>
+                <p class="skill-detail">Collections, environments, Newman CLI, contract testing</p>
+              </div>
+      
+              <div class="ticket-card skill-card">
+                <div class="ticket-card-header">
+                  <span class="ticket-id">SKILL-006</span>
+                  <span class="badge status-resolved">Resolved</span>
+                </div>
+                <h4 class="skill-name">SQL</h4>
+                <p class="skill-detail">Data validation queries, joins, backend state verification</p>
+              </div>
+      
+            </div>
+          </div>
+      
+          <div class="skills-lane">
+            <h3 class="lane-title">Tools & Process</h3>
+            <div class="lane-cards">
+      
+              <div class="ticket-card skill-card">
+                <div class="ticket-card-header">
+                  <span class="ticket-id">SKILL-007</span>
+                  <span class="badge status-resolved">Resolved</span>
+                </div>
+                <h4 class="skill-name">JIRA</h4>
+                <p class="skill-detail">Bug lifecycle management, sprint planning, reporting dashboards</p>
+              </div>
+      
+              <div class="ticket-card skill-card">
+                <div class="ticket-card-header">
+                  <span class="ticket-id">SKILL-008</span>
+                  <span class="badge status-resolved">Resolved</span>
+                </div>
+                <h4 class="skill-name">GitHub Actions / CI/CD</h4>
+                <p class="skill-detail">Pipeline setup, test gating, deploy automation</p>
+              </div>
+      
+            </div>
+          </div>
+      
+        </div>
+    </section>
+
+<!--projects section-->
+
+<section id="projects" class="section-container reveal">
+    <div class="section-header">
+      <h2 class="section-title">Projects</h2>
+      <span class="ticket-id">SPRINT-03</span>
+    </div>
+  
+    <div class="project-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="playwright">Playwright</button>
+      <button class="filter-btn" data-filter="postman">Postman</button>
+      <button class="filter-btn" data-filter="ci/cd">CI/CD</button>
+      <button class="filter-btn" data-filter="sql">SQL</button>
+      <button class="filter-btn" data-filter="accessibility">Accessibility</button>
+    </div>
+  
+    <div class="projects-grid" id="projectsGrid">
+  
+      <div class="ticket-card project-card" data-tags="playwright ci/cd github-actions">
+        <div class="ticket-card-header">
+          <span class="ticket-id">PROJ-001</span>
+          <span class="badge status-progress">In Progress</span>
+        </div>
+        <h3 class="project-title">QA Portfolio Site</h3>
+        <p class="project-desc">Personal portfolio treated as a production system — full Playwright E2E suite, GitHub Actions pipeline with test gating, and SSH deploy to Hostinger.</p>
+        <div class="project-tags">
+          <span class="tag">playwright</span>
+          <span class="tag">ci/cd</span>
+          <span class="tag">github-actions</span>
+        </div>
+        <div class="project-links">
+          <a href="YOUR_LIVE_URL" class="btn btn-secondary" target="_blank" rel="noopener">Live site</a>
+          <a href="YOUR_GITHUB_URL" class="btn btn-secondary" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+  
+      <div class="ticket-card project-card" data-tags="playwright postman sql">
+        <div class="ticket-card-header">
+          <span class="ticket-id">PROJ-002</span>
+          <span class="badge status-resolved">Resolved</span>
+        </div>
+        <h3 class="project-title">E-Commerce Checkout QA</h3>
+        <p class="project-desc">Led QA for a high-traffic checkout redesign at a retail client. 200+ automated test cases covering payment flows, edge cases, and cross-browser coverage. 14 critical bugs caught pre-launch.</p>
+        <div class="project-tags">
+          <span class="tag">playwright</span>
+          <span class="tag">postman</span>
+          <span class="tag">sql</span>
+        </div>
+        <div class="project-links">
+          <span class="badge status-closed">Anonymized</span>
+        </div>
+      </div>
+  
+      <div class="ticket-card project-card" data-tags="postman ci/cd sql">
+        <div class="ticket-card-header">
+          <span class="ticket-id">PROJ-003</span>
+          <span class="badge status-resolved">Resolved</span>
+        </div>
+        <h3 class="project-title">REST API Test Suite</h3>
+        <p class="project-desc">Postman collection + Newman CLI pipeline testing a public API. Covers contract testing, auth flows, status code validation, and schema checks. Runs on every commit via GitHub Actions.</p>
+        <div class="project-tags">
+          <span class="tag">postman</span>
+          <span class="tag">ci/cd</span>
+          <span class="tag">sql</span>
+        </div>
+        <div class="project-links">
+          <a href="YOUR_GITHUB_URL" class="btn btn-secondary" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+  
+      <div class="ticket-card project-card" data-tags="playwright accessibility">
+        <div class="ticket-card-header">
+          <span class="ticket-id">PROJ-004</span>
+          <span class="badge status-progress">In Progress</span>
+        </div>
+        <h3 class="project-title">Accessibility Audit Demo</h3>
         <span class="badge status-critical easter-egg-trigger" id="easterEggTrigger">
             CRIT-001 · Unresolved
         </span>
-    </section>
-
-    <section id="contact" class="ticket-section">
-        <div class="ticket-header">
-            <span class="ticket-id">QA-004</span>
-            <span class="badge status-resolved">Resolved</span>
+        <div class="project-tags">
+          <span class="tag">playwright</span>
+          <span class="tag">accessibility</span>
         </div>
-        <h2>Contact</h2>
-        <form id="contact-form" novalidate>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required /><br>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required /><br>
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea><br>
-            <button type="submit">Send</button>
-        </form>
-    </section>
+        <div class="project-links">
+          <a href="YOUR_GITHUB_URL" class="btn btn-secondary" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!--bugs section-->
+
+<section id="hall-of-fame" class="section-container reveal">
+    <div class="section-header">
+      <h2 class="section-title">Bug Hall of Fame</h2>
+      <span class="ticket-id">SPRINT-04</span>
+    </div>
+    <p class="section-subtitle">The bugs worth bragging about.</p>
+  
+    <div class="bugs-grid">
+  
+      <div class="ticket-card bug-card">
+        <div class="ticket-card-header">
+          <span class="ticket-id">BUG-001</span>
+          <span class="badge status-critical">Critical</span>
+        </div>
+        <h3 class="bug-title">The Checkout That Charged Twice</h3>
+        <div class="bug-meta">
+          <span class="bug-env">Production · Chrome · macOS</span>
+          <span class="bug-resolution badge status-resolved">Fixed</span>
+        </div>
+        <p class="bug-desc">Double-submit on the checkout button under slow network conditions triggered two payment charges. Reproducible 100% of the time with network throttling enabled.</p>
+        <div class="bug-impact">
+          <span class="impact-label">Impact</span>
+          <span class="impact-text">Revenue loss + customer complaints. Caught in QA before prod release.</span>
+        </div>
+      </div>
+  
+      <div class="ticket-card bug-card">
+        <div class="ticket-card-header">
+          <span class="ticket-id">BUG-002</span>
+          <span class="badge status-open">High</span>
+        </div>
+        <h3 class="bug-title">The Invisible Form Field</h3>
+        <div class="bug-meta">
+          <span class="bug-env">Staging · Firefox · Windows</span>
+          <span class="bug-resolution badge status-resolved">Fixed</span>
+        </div>
+        <p class="bug-desc">A required form field was present in the DOM but rendered with zero opacity — users couldn't see it, but the form wouldn't submit without it. Only reproduced on Firefox/Windows.</p>
+        <div class="bug-impact">
+          <span class="impact-label">Impact</span>
+          <span class="impact-text">Complete form submission blockage for ~15% of users.</span>
+        </div>
+      </div>
+  
+      <div class="ticket-card bug-card">
+        <div class="ticket-card-header">
+          <span class="ticket-id">BUG-003</span>
+          <span class="badge status-progress">Medium</span>
+        </div>
+        <h3 class="bug-title">Add your own bug here</h3>
+        <div class="bug-meta">
+          <span class="bug-env">Environment · Browser · OS</span>
+          <span class="bug-resolution badge status-resolved">Fixed</span>
+        </div>
+        <p class="bug-desc">Describe the bug in one or two punchy sentences. Make it specific — the more concrete the detail, the more credible it sounds.</p>
+        <div class="bug-impact">
+          <span class="impact-label">Impact</span>
+          <span class="impact-text">Describe why it mattered.</span>
+        </div>
+      </div>
+  
+    </div>
+</section>
+
+<!--experience section-->
+<section id="experience" class="section-container reveal">
+    <div class="section-header">
+      <h2 class="section-title">Experience</h2>
+      <span class="ticket-id">CHANGELOG</span>
+    </div>
+  
+    <div class="timeline">
+  
+      <div class="timeline-item">
+        <div class="timeline-marker">
+          <span class="version-tag">v3.0.0</span>
+        </div>
+        <div class="ticket-card timeline-card">
+          <div class="ticket-card-header">
+            <span class="ticket-id">EXP-003</span>
+            <span class="badge status-open">Current</span>
+          </div>
+          <h3 class="timeline-role">QA Engineer</h3>
+          <p class="timeline-company">Company Name · City, State</p>
+          <p class="timeline-dates">Month Year – Present</p>
+          <ul class="timeline-bullets">
+            <li>Replace with your real accomplishments — be specific and quantify where possible</li>
+            <li>Example: Reduced regression cycle time by 40% by building a Playwright automation suite</li>
+            <li>Example: Caught 3 P0 bugs during UAT for a payments feature affecting 10k daily users</li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="timeline-item">
+        <div class="timeline-marker">
+          <span class="version-tag">v2.0.0</span>
+        </div>
+        <div class="ticket-card timeline-card">
+          <div class="ticket-card-header">
+            <span class="ticket-id">EXP-002</span>
+            <span class="badge status-resolved">Resolved</span>
+          </div>
+          <h3 class="timeline-role">QA Analyst</h3>
+          <p class="timeline-company">Company Name · City, State</p>
+          <p class="timeline-dates">Month Year – Month Year</p>
+          <ul class="timeline-bullets">
+            <li>Add accomplishments here</li>
+            <li>Focus on impact, tools used, and team size</li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="timeline-item">
+        <div class="timeline-marker">
+          <span class="version-tag">v1.0.0</span>
+        </div>
+        <div class="ticket-card timeline-card">
+          <div class="ticket-card-header">
+            <span class="ticket-id">EXP-001</span>
+            <span class="badge status-closed">Closed</span>
+          </div>
+          <h3 class="timeline-role">Your First Role</h3>
+          <p class="timeline-company">Company Name · City, State</p>
+          <p class="timeline-dates">Month Year – Month Year</p>
+          <ul class="timeline-bullets">
+            <li>Add accomplishments here</li>
+          </ul>
+        </div>
+      </div>
+  
+    </div>
+</section>
+
+<!--contact section-->
+<section id="contact" class="section-container reveal">
+    <div class="section-header">
+      <h2 class="section-title">File a Report</h2>
+      <span class="ticket-id">CONTACT</span>
+    </div>
+    <p class="section-subtitle">Found a role that needs a QA engineer? Submit a ticket.</p>
+  
+    <div class="contact-layout">
+      <form id="contact-form" class="ticket-card contact-form" novalidate>
+  
+        <div class="form-group">
+          <label class="form-label" for="reporter">Reporter <span class="required">*</span></label>
+          <input class="form-input" type="text" id="reporter" name="reporter"
+            placeholder="Your name" required autocomplete="name" />
+          <span class="form-error" id="reporter-error"></span>
+        </div>
+  
+        <div class="form-group">
+          <label class="form-label" for="email">Contact Email <span class="required">*</span></label>
+          <input class="form-input" type="email" id="email" name="email"
+            placeholder="your@email.com" required autocomplete="email" />
+          <span class="form-error" id="email-error"></span>
+        </div>
+  
+        <div class="form-group">
+          <label class="form-label" for="subject">Summary <span class="required">*</span></label>
+          <input class="form-input" type="text" id="subject" name="subject"
+            placeholder="e.g. We need a QA engineer ASAP" required />
+          <span class="form-error" id="subject-error"></span>
+        </div>
+  
+        <div class="form-group">
+          <label class="form-label" for="priority">Priority</label>
+          <select class="form-input form-select" id="priority" name="priority">
+            <option value="low">Low — General enquiry</option>
+            <option value="medium">Medium — Potential opportunity</option>
+            <option value="high" selected>High — We need you now</option>
+            <option value="critical">Critical — Production is on fire</option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <label class="form-label" for="description">Description <span class="required">*</span></label>
+          <textarea class="form-input form-textarea" id="description" name="description"
+            placeholder="Describe the role, project, or opportunity. Steps to reproduce optional." required></textarea>
+          <span class="form-error" id="description-error"></span>
+        </div>
+  
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="submit-btn">File Report</button>
+          <span class="form-note">Fields marked <span class="required">*</span> are required</span>
+        </div>
+  
+        <div class="form-success" id="form-success" hidden>
+          <span class="ticket-id">CONTACT-001</span>
+          <p>Ticket created successfully. I'll be in touch within 1–2 business days.</p>
+          <span class="badge status-progress">In Progress</span>
+        </div>
+  
+      </form>
+  
+      <div class="contact-sidebar">
+        <div class="ticket-card sidebar-card">
+          <h3 class="sidebar-title">Quick Links</h3>
+          <ul class="sidebar-links">
+            <li><a href="YOUR_GITHUB_URL" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="YOUR_RESUME_URL" target="_blank" rel="noopener">Resume / CV</a></li>
+          </ul>
+        </div>
+        <div class="ticket-card sidebar-card">
+          <h3 class="sidebar-title">Availability</h3>
+          <p class="sidebar-text">Currently open to full-time and contract QA roles.</p>
+          <span class="badge status-open">Available</span>
+        </div>
+      </div>
+    </div>
+</section>
+    
+
 </main>
 
-<footer>
-    <p>Built & tested by Akiko</p>
-</footer>
+<footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-copy">
+        <span class="ticket-id">QA-EOF</span>
+        Built & tested by Akiko · All bugs are features
+      </span>
+      <div class="footer-links">
+        <a href="YOUR_GITHUB_URL" target="_blank" rel="noopener">GitHub</a>
+        <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <span class="badge status-critical easter-egg-trigger" id="easterEggTrigger">
+        CRIT-001 · Unresolved
+      </span>
+    </div>
+  </footer>
 
 <script src="js/main.js" type="module"></script>
 

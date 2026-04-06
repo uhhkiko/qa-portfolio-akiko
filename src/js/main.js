@@ -1,6 +1,8 @@
 import './typewriter.js';
 import './scroll.js';
 import './game.js';
+import './counters.js';
+import './filter.js';
 
 // Theme toggle
 
@@ -50,5 +52,44 @@ document.addEventListener('mouseout', e => {
   }
   if (e.target.closest(criticalEls)) {
     bug.src = 'assets/cursor-bug.svg';
+  }
+});
+
+// Contact
+
+const form = document.getElementById('contact-form');
+const successMsg = document.getElementById('form-success');
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  let valid = true;
+
+  const fields = [
+    { id: 'reporter',    msg: 'Reporter name is required' },
+    { id: 'email',       msg: 'A valid email is required' },
+    { id: 'subject',     msg: 'Summary is required' },
+    { id: 'description', msg: 'Description is required' },
+  ];
+
+  fields.forEach(({ id, msg }) => {
+    const input = document.getElementById(id);
+    const error = document.getElementById(`${id}-error`);
+    const empty = !input.value.trim();
+    const emailInvalid = id === 'email' && input.value && !/\S+@\S+\.\S+/.test(input.value);
+
+    if (empty || emailInvalid) {
+      input.classList.add('error');
+      error.textContent = emailInvalid ? 'Please enter a valid email' : msg;
+      valid = false;
+    } else {
+      input.classList.remove('error');
+      error.textContent = '';
+    }
+  });
+
+  if (valid) {
+    successMsg.hidden = false;
+    form.querySelector('button[type="submit"]').disabled = true;
+    // Replace with your actual form submission logic (Formspree, EmailJS, etc.)
   }
 });

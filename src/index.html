@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/hero.css" />
     <link rel="stylesheet" href="css/game.css" />
+    <link rel="stylesheet" href="css/terminal.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -331,6 +332,30 @@
         </div>
       </div>
   
+    </div>
+</section>
+
+<!--console section-->
+<section id="console-section" class="section-container reveal">
+    <div class="section-header">
+      <h2 class="section-title">Live Console</h2>
+      <span class="ticket-id">QA-CONSOLE</span>
+    </div>
+    <p class="section-subtitle">A real terminal. Type <code>help</code> to start. And yes — <code>curl</code> fires real API requests and runs real assertions.</p>
+
+    <div id="terminal" class="terminal">
+      <div class="terminal-bar">
+        <span class="terminal-dot"></span>
+        <span class="terminal-dot"></span>
+        <span class="terminal-dot"></span>
+        <span class="terminal-title">bash — qa-portfolio</span>
+      </div>
+      <div class="terminal-output" aria-live="polite"></div>
+      <div class="terminal-inputline">
+        <span class="terminal-prompt">akiko@portfolio:~$</span>
+        <input class="terminal-input" type="text" autocomplete="off" autocapitalize="off"
+          spellcheck="false" aria-label="Terminal input" />
+      </div>
     </div>
 </section>
 

@@ -1,0 +1,88 @@
+/* terminal.css — the Live Console showcase */
+
+.terminal {
+  max-width: 760px;
+  margin: 1.5rem auto 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  text-align: left;
+  cursor: text;
+}
+
+/* title bar with the three "traffic light" dots */
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.85rem;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+}
+
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #6e7681;
+}
+.terminal-dot:nth-child(1) { background: #ff5f56; }
+.terminal-dot:nth-child(2) { background: #ffbd2e; }
+.terminal-dot:nth-child(3) { background: #27c93f; }
+
+.terminal-title {
+  margin-left: 0.5rem;
+  color: #8b949e;
+  font-size: 0.8rem;
+}
+
+.terminal-output {
+  padding: 1rem;
+  height: 320px;
+  overflow-y: auto;
+  color: #c9d1d9;
+}
+
+.terminal-line {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.terminal-echo   { color: #58a6ff; }   /* the echoed command */
+.terminal-muted  { color: #8b949e; }   /* hints, unknown commands */
+.assert-pass     { color: #3fb950; }   /* ✓ */
+.assert-fail     { color: #f85149; }   /* ✗ */
+
+.terminal-inputline {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem 0.9rem;
+  border-top: 1px solid #21262d;
+}
+
+.terminal-prompt {
+  color: #3fb950;
+  white-space: nowrap;
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #c9d1d9;
+  font-family: inherit;
+  font-size: inherit;
+  caret-color: #3fb950;
+}
+
+@media (max-width: 600px) {
+  .terminal { font-size: 0.8rem; }
+  .terminal-output { height: 260px; }
+}

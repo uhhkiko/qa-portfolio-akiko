@@ -3,6 +3,7 @@ import './scroll.js';
 import './game.js';
 import './counters.js';
 import './filter.js';
+import './terminal.js';
 
 // Theme toggle
 

@@ -75,14 +75,27 @@ if (term) {
     // projects/ ...). Print them. Keep it playful. This is simulated — that's fine,
     // it's an easter egg. Later, `cat <file>` should read whatever you list here.
     ls(args, ctx) {
-      ctx.print("ls: not built yet — this one's yours.", 'terminal-muted');
+      const files = ['skills.txt', 'experience.txt', 'contact.txt'];
+      files.forEach(file => {
+        ctx.print(file);
+      });
     },
 
     // TODO(you) — print the "contents" of a file from args[0].
     // Hint: a lookup object { 'contact.txt': '...', 'skills.txt': '...' } and a
     // guard for "no such file". What should `cat contact.txt` reveal?
     cat(args, ctx) {
-      ctx.print("cat: not built yet — this one's yours.", 'terminal-muted');
+      const contents = {
+        'contact.txt': 'akiko.watson@callrail.com',
+        'skills.txt': 'Playwright · pytest · ...',
+        'experience.txt': '4+ years'
+      };
+      const body = contents[args[0]];
+      if (!body){
+        ctx.print('cat: '+ args[0] + ': No such file exists');
+        return
+      }
+      ctx.print(body);
     },
 
     // TODO(you) — your Experience section is already styled as a changelog with
@@ -90,7 +103,18 @@ if (term) {
     // Hint: only respond to `git log` (check args[0] === 'log'); otherwise print a
     // git-ish "unknown subcommand". Match the vibe of a real `git log --oneline`.
     git(args, ctx) {
-      ctx.print("git: not built yet — this one's yours.", 'terminal-muted');
+      if (args[0] !== 'log') {
+        ctx.print('git: ' + args[0] + ' is not a command')
+        return
+      }
+      const commits = [
+        { hash: 'a1b2c3d', tag: 'v3.0.0', msg: 'QA Engineer' },
+        { hash: '...',     tag: 'v2.0.0', msg: 'QA Analyst' },
+        { hash: '...',     tag: 'v1.0.0', msg: '...' },
+      ];
+      commits.forEach(commit => {
+        ctx.print(`${commit.hash} (tag: ${commit.tag}) ${commit.msg}`);
+      });
     },
 
     // TODO(you) — ★ THE HEADLINE SHOWCASE ★  A REAL API request + REAL assertions.

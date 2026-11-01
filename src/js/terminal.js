@@ -67,7 +67,7 @@ if (term) {
 
     // WORKED EXAMPLE #1 — the simplest handler. Copy this shape.
     whoami(args, ctx) {
-      ctx.print('Akiko Watson · QA Engineer · breaking things professionally since 2022');
+      ctx.print('Akiko Watson · QA Engineer · Since 2022');
     },
 
     // TODO(you) — list the "files" in your resume filesystem.
@@ -86,7 +86,7 @@ if (term) {
     // guard for "no such file". What should `cat contact.txt` reveal?
     cat(args, ctx) {
       const contents = {
-        'contact.txt': 'akiko.watson@callrail.com',
+        'contact.txt': 'akikowatson@gmail.com',
         'skills.txt': 'Playwright · pytest · ...',
         'experience.txt': '4+ years'
       };
@@ -108,9 +108,10 @@ if (term) {
         return
       }
       const commits = [
-        { hash: 'a1b2c3d', tag: 'v3.0.0', msg: 'QA Engineer' },
-        { hash: '...',     tag: 'v2.0.0', msg: 'QA Analyst' },
-        { hash: '...',     tag: 'v1.0.0', msg: '...' },
+        { hash: 'c3b2d4f',     tag: 'v4.0.0', msg: 'QA Engineer (CALLRAIL)' },
+        { hash: 'a1b2c3d',     tag: 'v3.0.0', msg: 'QA Engineer II (CALENDLY)' },
+        { hash: 'a2b3c4d',     tag: 'v2.0.0', msg: 'QA Engineer I (CALENDLY)' },
+        { hash: 'b1c2d3f',     tag: 'v1.0.0', msg: 'QA Apprentice (CALENDLY)' },
       ];
       commits.forEach(commit => {
         ctx.print(`${commit.hash} (tag: ${commit.tag}) ${commit.msg}`);

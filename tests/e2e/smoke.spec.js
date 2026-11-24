@@ -22,9 +22,9 @@ test.describe('Smoke tests', () => {
 
   test('contact form fields are present', async ({ page }) => {
     await page.goto('/');
-    await expect(page.locator('#name')).toBeVisible();
+    await expect(page.locator('#reporter')).toBeVisible();
     await expect(page.locator('#email')).toBeVisible();
-    await expect(page.locator('#message')).toBeVisible();
+    await expect(page.locator('#description')).toBeVisible();
   });
 
   test('page is responsive at mobile viewport', async ({ page }) => {

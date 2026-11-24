@@ -31,7 +31,7 @@ function updateToggleLabel(theme) {
 // Cursor
 
 const bug = document.getElementById('cursorBug');
-const criticalEls = '[data-cursor="critical"], #easterEggTrigger';
+const criticalEls = '[data-cursor="critical"], .easter-egg-trigger';
 
 document.addEventListener('mousemove', e => {
   bug.style.left = e.clientX + 'px';

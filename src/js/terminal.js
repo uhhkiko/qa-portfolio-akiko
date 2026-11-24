@@ -118,31 +118,31 @@ if (term) {
       });
     },
 
-    // TODO(you) — ★ THE HEADLINE SHOWCASE ★  A REAL API request + REAL assertions.
-    // This is core QA/SDET work, so you write it. Don't let me hand you the body —
-    // if you want it revealed, say "just show me" and we'll walk it line by line.
-    //
-    // Figure out, in order:
-    //   1. Read the URL from args[0]. No URL → print a usage hint and return.
-    //   2. Time it: capture a start mark, `await fetch(url)`, compute elapsed ms.
-    //      (Which browser timing API gives you a precise elapsed millisecond count?)
-    //   3. Print the status line, e.g. `200 OK · 142ms`  (res.status, res.statusText).
-    //   4. Build an array of { label, pass, detail? } and hand it to
-    //      ctx.renderAssertions(...). At minimum assert:
-    //        • status is 2xx
-    //        • the body parses as JSON
-    //        • response time under some threshold you choose
-    //      What else would a real contract test check? (a schema key present?
-    //      the content-type header?) Add one you'd actually write at work.
-    //   5. Handle the sad paths a good QA tests on purpose: network error, a CORS
-    //      block (try/catch around fetch), a non-JSON body. Print a clear failure —
-    //      don't let it throw silently.
-    //
-    // No-auth public APIs to try:
-    //   https://api.github.com/repos/<your-user>/qa-portfolio-akiko
-    //   https://jsonplaceholder.typicode.com/todos/1
     async curl(args, ctx) {
-      ctx.print("curl: not built yet — this is the big one. Build it, or say 'just show me'.", 'terminal-muted');
+       if (!args[0]) {
+        ctx.print('usage: curl <url>' + ' HINT: https://jsonplaceholder.typicode.com/todos/1')
+        return
+      }
+      const start = performance.now();
+      let res;
+      try {
+        res = await fetch(args[0]);
+      } catch {
+        ctx.print('TODO(you): network or CORS failure message');
+        return;
+      }
+      const body = await res.json();
+      const elapsed = performance.now() - start;
+      ctx.print(`${res.status} ${res.statusText} ${elapsed.toFixed(0)}ms`);
+      const assertions = [
+        { label: 'status is 200', pass: res.status === 200 },
+        { label: 'speed is less than 1000 ms', pass: elapsed < 1000 },
+        { label: 'userId is a number', pass: typeof body.userId === 'number' },  
+        { label: 'id is a number', pass: typeof body.id === 'number' },  
+        { label: 'completed is a boolean', pass: typeof body.completed === 'boolean' },  
+        { label: 'title is a string', pass: typeof body.title === 'string' },  
+      ];
+      ctx.renderAssertions(assertions);
     },
   };
 
@@ -165,12 +165,12 @@ if (term) {
       return;
     }
     ctx.print('Available commands:');
-    ctx.print('  whoami            who you are looking at');
-    ctx.print('  ls                list resume files        (you build)');
-    ctx.print('  cat <file>        read a resume file        (you build)');
-    ctx.print('  git log           experience as commits     (you build)');
-    ctx.print('  curl <url>        real API request + tests  (you build)');
-    ctx.print('  rails c           drop into a rails console (you build)');
+    ctx.print('  whoami            who you are looking at ');
+    ctx.print('  ls                list resume files ');
+    ctx.print('  cat <file>        read a resume file ');
+    ctx.print('  git log           experience as commits ');
+    ctx.print('  curl <url>        real API request + tests ');
+    ctx.print('  rails c           drop into a rails console ');
     ctx.print('  clear             clear the screen');
   }
 
